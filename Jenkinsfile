@@ -39,7 +39,7 @@ pipeline {
           withCredentials([sshUserPrivateKey(
             credentialsId: 'ssh',
             keyFileVariable: 'identityFile',
-            passphraseVariable: '',
+            passphraseVariable: '251199',
             usernameVariable: 'user'
           )]) {
             def remote = [:]
