@@ -39,12 +39,13 @@ pipeline {
           withCredentials([sshUserPrivateKey(
             credentialsId: 'ssh',
             keyFileVariable: 'identityFile',
-            passphraseVariable: '251199',
-            usernameVariable: 'jenkins'
+            passphraseVariable: 'pass',
+            usernameVariable: 'user'
           )]) {
             def remote = [:]
             remote.name = 'server'
             remote.host = FRONTEND_SERVER
+            remote.passphrase = pass
             remote.user = user
             remote.identityFile = identityFile
             remote.allowAnyHosts = true
